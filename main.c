@@ -61,8 +61,7 @@ int main(void)
             case '\n':
                 if (sp == 1) {
                     printf("\t%.8g\n", pop());
-                } else
-                {
+                } else {
                     printf("error: syntax\n");
                 }
                 break;
