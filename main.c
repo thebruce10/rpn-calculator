@@ -59,7 +59,12 @@ int main(void)
                 break;
 
             case '\n':
-                printf("\t%.8g\n", pop());
+                if (sp == 1) {
+                    printf("\t%.8g\n", pop());
+                } else
+                {
+                    printf("error: syntax\n");
+                }
                 break;
 
             default:
