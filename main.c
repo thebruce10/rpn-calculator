@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> //for atof
 #include <ctype.h>
+#include <math.h>
 
 
 //stack
@@ -56,6 +57,20 @@ int main(void)
                 } else {
                     printf("error: zero divisor\n");
                 }
+                break;
+
+            case '%':
+                op2 = pop();
+                if (op2 != 0.0) {
+                    push(fmod(pop(), op2));
+                } else {
+                    printf("error: zero divisor\n");
+                }
+                break;
+
+            case '^':
+                op2 = pop();
+                push(pow(pop(), op2));
                 break;
 
             case '\n':
